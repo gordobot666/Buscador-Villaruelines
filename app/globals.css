@@ -1,0 +1,261 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap');
+
+body {
+  @apply min-h-screen transition-all duration-500;
+  background-color: #ffffff; /* fondo blanco modo día */
+  color: #111111; /* texto negro */
+  font-family: 'Poppins', sans-serif;
+}
+
+body.dark {
+  background-color: #121212; /* negro muy oscuro modo noche */
+  color: #ff66a3; /* rosa fuerte para texto */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Títulos */
+.title {
+  @apply text-4xl font-extrabold mb-4 text-center;
+  color: #d6336c; /* rosa fuerte modo día */
+}
+body.dark .title {
+  color: #ff99c8; /* rosa claro modo noche */
+}
+
+.subtitle {
+  @apply text-2xl font-bold mb-2 text-center;
+  color: #9e295b; /* rosa oscuro modo día */
+}
+body.dark .subtitle {
+  color: #ffb3d9; /* rosa pastel modo noche */
+}
+
+.contador {
+  @apply text-center text-base font-semibold mb-6;
+  color: #c2185b; /* rosa oscuro modo día */
+}
+body.dark .contador {
+  color: #ff99c8;
+}
+
+/* Buscador */
+.search-container {
+  @apply flex flex-col sm:flex-row items-center gap-4 mb-6 w-full justify-center;
+}
+input[type="text"] {
+  @apply border p-3 rounded-full max-w-full text-center focus:outline-none focus:ring-2;
+  width: 22rem;
+  background-color: #fff0f6; /* rosa muy claro */
+  border-color: #d6336c; /* rosa fuerte */
+  color: #6b0036; /* rosa oscuro */
+  placeholder-color: #d6336c;
+}
+body.dark input[type="text"] {
+  background-color: #2a092e; /* rosa oscuro casi negro */
+  border-color: #ff66a3;
+  color: #ff99c8;
+  placeholder-color: #ff66a3;
+}
+
+/* Botones globales */
+button {
+  @apply px-6 py-3 rounded-full font-bold transition-all duration-300;
+  background-color: #d6336c; /* rosa fuerte */
+  color: white;
+}
+button:hover {
+  background-color: #9e295b; /* rosa oscuro */
+}
+
+/* Selector de vista */
+.view-selector {
+  @apply flex justify-center gap-4 mb-8;
+}
+.view-selector button {
+  @apply text-white px-4 py-2 rounded-full font-bold transition-all duration-300;
+  background-color: #d6336c;
+}
+.view-selector .active-view {
+  background-color: #9e295b;
+}
+
+/* Barra alfabética */
+.alphabet-bar {
+  @apply flex flex-wrap justify-center gap-2 mb-6;
+}
+.alphabet-btn {
+  @apply font-bold px-3 py-1 rounded transition-all duration-200;
+  background-color: #ffd6e8; /* rosa pastel */
+  color: #66002a; /* rosa oscuro */
+}
+.alphabet-btn:hover {
+  background-color: #d6336c;
+  color: white;
+}
+.alphabet-btn.active {
+  background-color: #9e295b;
+  color: white;
+}
+body.dark .alphabet-btn {
+  background-color: #2a092e;
+  color: #ff99c8;
+}
+body.dark .alphabet-btn:hover {
+  background-color: #ff66a3;
+  color: white;
+}
+body.dark .alphabet-btn.active {
+  background-color: #9e295b;
+}
+
+/* Grid */
+.grid-autofit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* Tarjetas */
+.user-card {
+  @apply rounded-2xl shadow-md transition-all duration-300 p-4 flex flex-col items-center;
+  background-color: #fff0f6;
+  color: #66002a;
+}
+.user-card:hover {
+  @apply shadow-xl scale-105;
+}
+body.dark .user-card {
+  background-color: #2a092e;
+  color: #ff99c8;
+}
+.user-id {
+  @apply text-xs;
+  color: #9e295b;
+}
+.user-name {
+  @apply text-base font-bold;
+}
+.avatar {
+  @apply w-16 h-16 rounded-full object-cover shadow mb-3;
+  border: 4px solid #d6336c;
+}
+body.dark .avatar {
+  border-color: #ff66a3;
+}
+
+/* Paginación */
+.pagination {
+  @apply flex flex-wrap items-center justify-center gap-2;
+}
+.pagination button {
+  @apply px-4 py-2 rounded-full shadow hover:shadow-lg transition-all duration-300 font-semibold;
+  background-color: #d6336c;
+  color: white;
+}
+.pagination .active-page {
+  background-color: #9e295b;
+}
+
+/* Footer */
+.footer {
+  @apply w-full text-center text-sm py-6;
+  color: #9e295b;
+}
+body.dark .footer {
+  color: #ff99c8;
+}
+.footer-link {
+  @apply font-semibold hover:underline;
+}
+
+/* Modal */
+.modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50;
+}
+.modal {
+  @apply p-6 rounded-xl max-w-3xl w-full shadow-xl overflow-y-auto max-h-[80vh];
+  background-color: #fff0f6;
+  color: #66002a;
+}
+body.dark .modal {
+  background-color: #2a092e;
+  color: #ff99c8;
+}
+.modal-title {
+  @apply text-xl font-bold mb-4 text-center;
+}
+.modal-steps {
+  @apply list-decimal pl-6 mb-4 text-sm;
+}
+.code-block {
+  @apply p-4 rounded-lg overflow-auto text-sm text-left max-h-60 mb-4;
+  background-color: #ffe6f0;
+}
+body.dark .code-block {
+  background-color: #3b1b3e;
+}
+
+/* Botones especiales */
+.btn-copy {
+  @apply text-white px-4 py-2 rounded-lg font-bold transition text-sm sm:text-base text-center;
+}
+.uniform-btn {
+  @apply w-52 h-12 inline-flex items-center justify-center;
+}
+.btn-blue {
+  @apply bg-pink-700 hover:bg-pink-800;
+}
+.btn-red {
+  @apply bg-red-600 hover:bg-red-700;
+}
+.btn-green {
+  @apply bg-green-600 hover:bg-green-700;
+}
+
+/* Acceso */
+.access-wrapper {
+  @apply flex items-center justify-center min-h-screen transition-all duration-500;
+  background-color: #fff0f6;
+}
+body.dark .access-wrapper {
+  background-color: #121212;
+}
+.access-box {
+  @apply p-10 rounded-2xl shadow-2xl w-full max-w-md text-center;
+  background-color: white;
+  color: #66002a;
+}
+body.dark .access-box {
+  background-color: #2a092e;
+  color: #ff99c8;
+}
+.access-title {
+  @apply text-3xl font-extrabold mb-6;
+  color: #d6336c;
+}
+body.dark .access-title {
+  color: #ff99c8;
+}
+.access-input {
+  @apply w-full px-4 py-3 mb-4 rounded-full border placeholder-pink-400 focus:outline-none focus:ring-2;
+  background-color: white;
+  border-color: #d6336c;
+  color: #66002a;
+}
+body.dark .access-input {
+  background-color: #3b1b3e;
+  border-color: #ff66a3;
+  color: #ffb3d9;
+}
+.access-button {
+  @apply w-full font-bold py-3 rounded-full transition duration-300 text-white;
+  background-color: #d6336c;
+}
+.access-button:hover {
+  background-color: #9e295b;
+}
