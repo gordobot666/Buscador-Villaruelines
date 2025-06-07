@@ -4,8 +4,8 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Buscador de Mandriles',
-  description: 'Busca usuarios Mandriles en Twitter',
+  title: 'Buscador de Villarruelines Retrasad0s',
+  description: 'Busca usuarios Villarruelines en Twitter',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
