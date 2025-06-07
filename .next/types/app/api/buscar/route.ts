@@ -1,4 +1,4 @@
-// File: C:\Users\Ghoul1\Desktop\buscador-mandriles\app\api\buscar\route.ts
+// File: I:\Buscador Villaruelines\app\api\buscar\route.ts
 import * as entry from '../../../../../app/api/buscar/route.js'
 import type { NextRequest } from 'next/server.js'
 
